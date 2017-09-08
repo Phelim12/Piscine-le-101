@@ -6,20 +6,25 @@
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/08 12:33:30 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/08 16:18:05 by clcreuso         ###   ########.fr       */
+/*   Updated: 2017/09/08 20:44:17 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
+void	ft_putchar(char c);
 
-void	ft_putchar(char c)
+void	ft_init_tab(int a, int *str)
 {
-	write(1, &c, 1);
+	int i;
+
+	i = 0;
+	while (i < a)
+	{
+		str[i] = 0;
+		i++;
+	}
 }
 
-
-void    ft_printtab(int a, int b, int c, int d)
+void	ft_printtab(int a, int b, int c, int d)
 {
 	ft_putchar(a + 48);
 	ft_putchar(b + 48);
@@ -37,7 +42,7 @@ void    ft_printtab(int a, int b, int c, int d)
 
 void	ft_check_comb2(int a, int b, int c, int d)
 {
-	while(c < 10)
+	while (c < 10)
 	{
 		if (d > 9)
 		{
@@ -48,25 +53,23 @@ void	ft_check_comb2(int a, int b, int c, int d)
 		{
 			ft_printtab(a, b, c, d);
 		}
-		d++;	
+		d++;
 	}
 }
 
-void 	ft_print_comb2(void)
+void	ft_print_comb2(void)
 {
 	int tab[4];
 
-	tab[0] = 0;
-	tab[1] = 0;
-	tab[2] = 0;
+	ft_init_tab(4, tab);
 	tab[3] = 1;
-	while(tab[0] <= 9 )
+	while (tab[0] <= 9)
 	{
 		ft_check_comb2(tab[0], tab[1], tab[2], tab[3]);
 		tab[1]++;
 		if (tab[1] == 10)
-        {
-            tab[0]++;
+		{
+			tab[0]++;
 			tab[1] = 0;
 			tab[2] = tab[0];
 		}
@@ -78,10 +81,4 @@ void 	ft_print_comb2(void)
 		else
 			tab[3] = tab[1] + 1;
 	}
-}
-
-int main()
-{
-	ft_print_comb2();
-	return 0 ;
 }
