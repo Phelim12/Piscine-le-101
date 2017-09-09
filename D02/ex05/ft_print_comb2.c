@@ -6,7 +6,7 @@
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/08 12:33:30 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/08 20:44:17 by clcreuso         ###   ########.fr       */
+/*   Updated: 2017/09/09 14:51:30 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,7 @@ void	ft_check_comb2(int a, int b, int c, int d)
 			c++;
 		}
 		if (c < 10)
-		{
 			ft_printtab(a, b, c, d);
-		}
 		d++;
 	}
 }

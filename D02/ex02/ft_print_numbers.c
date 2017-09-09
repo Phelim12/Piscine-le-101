@@ -6,13 +6,13 @@
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/08 12:19:28 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/08 12:21:22 by clcreuso         ###   ########.fr       */
+/*   Updated: 2017/09/09 14:57:07 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_putchar(char c);
 
-void	ft_print_alphabet(void)
+void	ft_print_numbers(void)
 {
 	int a;
 

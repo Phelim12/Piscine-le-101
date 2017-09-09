@@ -6,16 +6,13 @@
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/08 12:29:32 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/08 16:05:42 by clcreuso         ###   ########.fr       */
+/*   Updated: 2017/09/09 14:57:46 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+void	ft_putchar(char c);
 
-void	ft_is_nagtive(int n)
+void	ft_is_negative(int n)
 {
 	if (n >= 0)
 	{

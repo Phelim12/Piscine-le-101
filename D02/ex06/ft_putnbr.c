@@ -6,24 +6,24 @@
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/08 15:55:04 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/08 16:00:04 by clcreuso         ###   ########.fr       */
+/*   Updated: 2017/09/09 15:00:11 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_putchar(char c);
 
-void	ft_putnbr(int a)
+void	ft_putnbr(int nb)
 {
-	if (a < 0)
+	if (nb < 0)
 	{
 		ft_putchar('-');
-		a = -a;
+		nb = -nb;
 	}
-	if (a >= 10)
+	if (nb >= 10)
 	{
-		ft_putnbr(a / 10);
-		ft_putnbr(a % 10);
+		ft_putnbr(nb / 10);
+		ft_putchar(nb % 10);
 	}
 	else
-		ft_putchar(a + '0');
+		ft_putchar(nb + '0');
 }
