@@ -6,7 +6,7 @@
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/08 19:08:52 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/08 19:19:57 by clcreuso         ###   ########.fr       */
+/*   Updated: 2017/09/09 15:06:06 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void	ft_putstr(char *str)
 	int i;
 
 	i = 0;
-	while(str[i] != '\0')
+	while (str[i] != '\0')
 	{
 		ft_putchar(str[i]);
-		i++;		
+		i++;
 	}
 }

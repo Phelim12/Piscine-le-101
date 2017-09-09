@@ -6,7 +6,7 @@
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/08 18:49:58 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/09 13:59:16 by clcreuso         ###   ########.fr       */
+/*   Updated: 2017/09/09 15:05:08 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	ft_ultimate_div_mod(int *a, int *b)
 
 	div = *a / *b;
 	mod = *a % *b;
-
 	*a = div;
 	*b = mod;
 }

@@ -6,11 +6,9 @@
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/08 20:59:39 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/09 13:49:48 by clcreuso         ###   ########.fr       */
+/*   Updated: 2017/09/09 15:06:44 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 int		ft_strlen(char *str)
 {
@@ -38,13 +36,4 @@ char	*ft_strrev(char *str)
 		a++;
 	}
 	return (str);
-}
-
-int main()
-{
-	char tab[30] = "Salut";
-	char *tab2;
-
-	tab2 = ft_strrev(tab);
-	printf("Ma chaine = %s", tab2);
 }
