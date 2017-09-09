@@ -6,69 +6,52 @@
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/09 08:07:46 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/09 10:50:42 by clcreuso         ###   ########.fr       */
+/*   Updated: 2017/09/09 12:08:35 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int		ft_strlen(char *str)
+int		ft_check_strsym(char a, char b)
 {
-	int i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
-
-char	*ft_keep_numb(char *str)
-{
-	int a;
-	int b;
-
-	a = 0;
-	while(!(str[a] <= '9' && str[a] >= '0'))
-		a++;
-	b = 0;
-	while(str[a] <= '9' && str[a] >= '0')
-	{
-		if(str[a-1] == '-')
-		{
-			str[b] = str[a - 1];
-			b++;
-		}
-		str[b] = str[a];
-		a++;
-		b++;
-	}
-	str[b] = '\0';
-	printf("str = %s", str);
-	return (str);
+	if ((a == '-' || a == '+') && (b == '-' || b == '+'))
+		return (1);
+	return (0);
 }
 
 int		ft_atoi(char *str)
 {
+	int nb;
 	int neg;
-	int count;
-	int down;
-	
-	count = 0;
+	int a = 0;
+
 	neg = 1;
-	if (str[count] == '-')
+	
+	nb = 0;
+	while (!(str[a] <= '9' && str[a] >= '0'))
+		a++;
+	if (str[a - 1] == '-')
 		neg = -1;
-	count = (ft_strlen(str) - 1);
-	while(str[count] != '\0' || str[count] )
+	if (ft_check_strsym(str[a - 1], str[a - 2]))
+		return (nb);
+	while (str[a] <= '9' && str[a] >='0')
+		a++;
+	a--;
+	while (str[a] <= '9' && str[a] >= '0')
 	{
-		
-		count--;
+		nb += neg * (str[a] - '0');
+		a--;
+		neg *= 10;
 	}
-	return(count);
+	printf("nb = %d", nb);
+	return (nb);
 }
 
 int		main()
 {
-	char nb[300] = "   334234";
+	int nb1;
+	char nb[300] = "   -+919+213981242i34j";
 	
-	ft_atoi(nb);
+	nb1 = ft_atoi(nb);
+	printf("nb = %d", nb1);
 }
