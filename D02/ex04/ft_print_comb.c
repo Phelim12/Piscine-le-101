@@ -6,7 +6,7 @@
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/08 20:13:18 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/09 14:28:23 by clcreuso         ###   ########.fr       */
+/*   Updated: 2017/09/10 09:04:07 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,5 @@ void	ft_print_comb(void)
 		}
 		ft_printtab(tab[0], tab[1], tab[2]);
 		tab[2]++;
-		ft_putchar('\n');
 	}
 }
