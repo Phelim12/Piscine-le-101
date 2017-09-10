@@ -6,20 +6,14 @@
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/10 10:55:20 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/10 11:15:17 by clcreuso         ###   ########.fr       */
+/*   Updated: 2017/09/10 19:12:15 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
-
-int		rush(int width, int height);
-int		init_tab(char **tab);
+ 
+void	rush(int x, int y);
 
 int		main()
 {
-	int x;
-	int y;
-
-	rush(x, y);
+	rush(1, 5);
 	return (0);
 }
