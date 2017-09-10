@@ -6,39 +6,40 @@
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/09 08:07:46 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/09 15:12:09 by clcreuso         ###   ########.fr       */
+/*   Updated: 2017/09/10 10:42:42 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_check_strsym(char a, char b)
+int		ft_check_param(char a, char b)
 {
+	if (a == ' ')
+		return (0);
 	if ((a == '-' || a == '+') && (b == '-' || b == '+'))
 		return (1);
-	return (0);
+	if (a == '-' || a == '+')
+		return (0);
+	return (1);
 }
 
 int		ft_atoi(char *str)
 {
-	int nb;
-	int neg;
-	int a;
+	int		a;
+	int		nb;
+	float	neg;
 
-	neg = 1;
-	nb = 0;
 	a = 0;
+	nb = 0;
+	neg = 0.1;
 	while (!(str[a] <= '9' && str[a] >= '0'))
-		a++;
+		if (ft_check_param(str[a], str[a + 1]))
+			return (nb);
+		else
+			a++;
 	if (str[a - 1] == '-')
-		neg = -1;
-	if (ft_check_strsym(str[a - 1], str[a - 2]))
-		return (nb);
+		neg = -0.1;
 	while (str[a + 1] <= '9' && str[a + 1] >= '0')
 		a++;
 	while (str[a] <= '9' && str[a] >= '0')
-	{
-		nb += neg * (str[a] - '0');
-		a--;
-		neg *= 10;
-	}
+		nb += (neg *= 10) * (str[a--] - '0');
 	return (nb);
 }
