@@ -6,13 +6,13 @@
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/10 10:55:20 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/10 19:12:15 by clcreuso         ###   ########.fr       */
+/*   Updated: 2017/09/11 13:07:59 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
- 
+
 void	rush(int x, int y);
 
-int		main()
+int		main(void)
 {
 	rush(1, 5);
 	return (0);
