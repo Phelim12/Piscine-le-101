@@ -6,11 +6,16 @@
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/10 10:57:35 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/11 13:04:00 by clcreuso         ###   ########.fr       */
+/*   Updated: 2017/09/11 19:25:08 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#ifndef UNISTD_H
+# define UNISTD_H
+
+# include <unistd.h>
+
+#endif
 
 void	ft_putchar(char c)
 {
