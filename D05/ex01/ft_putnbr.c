@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/10 10:57:35 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/12 12:49:08 by clcreuso         ###   ########.fr       */
+/*   Created: 2017/09/08 15:55:04 by clcreuso          #+#    #+#             */
+/*   Updated: 2017/09/10 09:05:57 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UNISTD_H
-# define UNISTD_H
+void	ft_putchar(char c);
 
-# include <unistd.h>
-
-#endif
-
-void	ft_putchar(char c)
+void	ft_putnbr(int nb)
 {
-	write(1, &c, 1);
+	if (nb < 0)
+	{
+		ft_putchar('-');
+		nb = -nb;
+	}
+	if (nb >= 10)
+	{
+		ft_putnbr(nb / 10);
+		ft_putchar(nb % 10 + '0');
+	}
+	else
+		ft_putchar(nb + '0');
 }

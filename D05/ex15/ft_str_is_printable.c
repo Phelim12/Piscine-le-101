@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/10 10:57:35 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/12 12:49:08 by clcreuso         ###   ########.fr       */
+/*   Created: 2017/09/12 18:22:47 by clcreuso          #+#    #+#             */
+/*   Updated: 2017/09/12 19:38:15 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UNISTD_H
-# define UNISTD_H
-
-# include <unistd.h>
-
-#endif
-
-void	ft_putchar(char c)
+int		ft_char_is_printable(char c)
 {
-	write(1, &c, 1);
+	if (c >= 32 && c <= 126)
+		return (1);
+	return (0);
+}
+
+int		ft_str_is_printable(char *str)
+{
+	int a;
+
+	a = 0;
+	while (str[a])
+		if (ft_char_is_printable(str[a]))
+			a++;
+		else
+			return (0);
+	return (1);
 }

@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/10 10:57:35 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/12 12:49:08 by clcreuso         ###   ########.fr       */
+/*   Created: 2017/09/12 12:03:52 by clcreuso          #+#    #+#             */
+/*   Updated: 2017/09/12 19:33:12 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UNISTD_H
-# define UNISTD_H
-
-# include <unistd.h>
-
-#endif
-
-void	ft_putchar(char c)
+char	*ft_strstr(char *str, char *to_find)
 {
-	write(1, &c, 1);
+	int a;
+	int b;
+
+	a = 0;
+	b = 0;
+	while (str[b])
+	{
+		if (to_find[a] == str[b])
+			while (to_find[a] == str[b + a])
+				a++;
+		if (to_find[a] == '\0')
+			return (str + b);
+		else
+			a = 0;
+		b++;
+	}
+	return (NULL);
 }

@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/10 10:57:35 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/12 12:49:08 by clcreuso         ###   ########.fr       */
+/*   Created: 2017/09/08 19:08:52 by clcreuso          #+#    #+#             */
+/*   Updated: 2017/09/10 10:15:17 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UNISTD_H
-# define UNISTD_H
+void	ft_putchar(char c);
 
-# include <unistd.h>
-
-#endif
-
-void	ft_putchar(char c)
+void	ft_putstr(char *str)
 {
-	write(1, &c, 1);
+	int i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
 }

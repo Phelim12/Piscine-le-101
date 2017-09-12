@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/10 10:57:35 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/12 12:49:08 by clcreuso         ###   ########.fr       */
+/*   Created: 2017/09/12 13:38:40 by clcreuso          #+#    #+#             */
+/*   Updated: 2017/09/12 19:34:19 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UNISTD_H
-# define UNISTD_H
-
-# include <unistd.h>
-
-#endif
-
-void	ft_putchar(char c)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	write(1, &c, 1);
+	int a;
+
+	a = 0;
+	if (n <= 0)
+		return (0);
+	n--;
+	while ((s1[a] || s2[a]) && (n--))
+	{
+		if (s1[a] != s2[a])
+			return (s1[a] - s2[a]);
+		a++;
+	}
+	return (s1[a] - s2[a]);
 }
