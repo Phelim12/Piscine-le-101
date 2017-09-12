@@ -1,32 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/12 12:03:52 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/12 20:24:56 by clcreuso         ###   ########.fr       */
+/*   Created: 2017/09/08 18:30:29 by clcreuso          #+#    #+#             */
+/*   Updated: 2017/09/10 10:12:47 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(char *str, char *to_find)
+void	ft_swap(int *a, int *b)
 {
-	int a;
-	int b;
+	int c;
 
-	a = 0;
-	b = 0;
-	while (str[b])
-	{
-		if (to_find[a] == str[b])
-			while (to_find[a] == str[b + a])
-				a++;
-		if (to_find[a] == '\0')
-			return (str + b);
-		else
-			a = 0;
-		b++;
-	}
-	return (0);
+	c = *a;
+	*a = *b;
+	*b = c;
 }

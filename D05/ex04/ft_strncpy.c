@@ -6,7 +6,7 @@
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/12 11:10:23 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/12 19:30:26 by clcreuso         ###   ########.fr       */
+/*   Updated: 2017/09/12 20:25:14 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int		ft_strlen(char *str)
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
 	if (ft_strlen(dest) < n)
-		return (NULL);
+		return (0);
 	while (n--)
 		dest[n] = src[n];
 	return (dest);

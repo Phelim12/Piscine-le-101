@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/12 12:03:52 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/12 20:24:56 by clcreuso         ###   ########.fr       */
+/*   Created: 2017/09/08 19:08:52 by clcreuso          #+#    #+#             */
+/*   Updated: 2017/09/10 10:15:17 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(char *str, char *to_find)
-{
-	int a;
-	int b;
+void	ft_putchar(char c);
 
-	a = 0;
-	b = 0;
-	while (str[b])
+void	ft_putstr(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i] != '\0')
 	{
-		if (to_find[a] == str[b])
-			while (to_find[a] == str[b + a])
-				a++;
-		if (to_find[a] == '\0')
-			return (str + b);
-		else
-			a = 0;
-		b++;
+		ft_putchar(str[i]);
+		i++;
 	}
-	return (0);
 }

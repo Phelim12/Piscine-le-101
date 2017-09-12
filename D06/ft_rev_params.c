@@ -1,32 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/12 12:03:52 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/12 20:24:56 by clcreuso         ###   ########.fr       */
+/*   Created: 2017/09/08 20:59:39 by clcreuso          #+#    #+#             */
+/*   Updated: 2017/09/12 21:10:06 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(char *str, char *to_find)
+int		ft_strlen(char *str)
 {
-	int a;
-	int b;
+	int i;
+
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}
+
+char	*ft_strrev(char *str)
+{
+	char	swap;
+	int		size;
+	int		a;
 
 	a = 0;
-	b = 0;
-	while (str[b])
+	size = ft_strlen(str);
+	while (a < size / 2)
 	{
-		if (to_find[a] == str[b])
-			while (to_find[a] == str[b + a])
-				a++;
-		if (to_find[a] == '\0')
-			return (str + b);
-		else
-			a = 0;
-		b++;
+		swap = str[size - (a + 1)];
+		str[size - (a + 1)] = str[a];
+		str[a] = swap;
+		a++;
 	}
-	return (0);
+	return (str);
 }
