@@ -6,7 +6,7 @@
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/12 14:32:45 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/12 19:36:39 by clcreuso         ###   ########.fr       */
+/*   Updated: 2017/09/13 13:08:39 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ char	*ft_strcapitalize(char *str)
 		if (!(ft_char_is_alphanum(str[a - 1])) && ft_char_is_low(str[a]))
 			str[a] -= 32;
 		a++;
+		if (str[a] >= 'A' && str[a] <= 'Z')
+			str[a] += 32;
 	}
 	return (str);
 }

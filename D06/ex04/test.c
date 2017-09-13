@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/12 20:50:43 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/12 21:40:05 by clcreuso         ###   ########.fr       */
+/*   Created: 2017/09/13 18:34:46 by clcreuso          #+#    #+#             */
+/*   Updated: 2017/09/13 18:57:24 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 
 void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
-void	ft_putstr(char *str)
+void	ft_putstr(char *s1)
 {
-	int i;
+	int a;
 
-	i = 0;
-	while (str[i] != '\0')
+	a = 0;
+	while (s1[a])
 	{
-		ft_putchar(str[i]);
-		i++;
+		ft_putchar(s1[a]);
+		a++;
 	}
 }
 
@@ -44,34 +43,40 @@ int		ft_strcmp(char *s1, char *s2)
 	return (s1[a] - s2[a]);
 }
 
-void	ft_sort_integer_table(char **tab, int argc)
+void	tri_iteratif(char *tableau[], int taille)
 {
-	int swap;
-	int a;
+	char *temp; 
+	int i;
+	int j;
 
-	a = 1;
-	while (a < argc)
+	i = 1;
+	while (i < taille) 
 	{
-		if (ft_strcmp(tab[a], tab[a + 1]))
+		j = 1;
+		while (j < taille)
 		{
-			printf("tab  == %s", tab[a]);
+			if (ft_strcmp(tableau[i], tableau[j]) < 0)
+			{
+				temp = tableau[i];
+				tableau[i] = tableau[j];
+				tableau[j] = temp;
+			}
+			j++;
 		}
-		a++;
+		i++;
 	}
 }
 
-
-int		main(int argc, char *argv[])
+int  main(int argc, char *argv[])
 {
-	int a;
+	int i;
 
-	a = 1;
-	ft_sort_integer_table(argv, argc);
-	while (argv[a])
+	tri_iteratif(argv, argc);
+	i = 1;
+	while (i < argc)
 	{
-		ft_putstr(argv[a]);
+		ft_putstr(argv[i]);
 		ft_putchar('\n');
-		a++;
+		i++;
 	}
-	return (0);
 }
