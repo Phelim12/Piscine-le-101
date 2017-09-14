@@ -6,9 +6,11 @@
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/08 15:55:04 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/13 13:07:51 by clcreuso         ###   ########.fr       */
+/*   Updated: 2017/09/13 18:23:17 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+void	ft_putchar(char c);
 
 void	ft_putnbr(int nb)
 {

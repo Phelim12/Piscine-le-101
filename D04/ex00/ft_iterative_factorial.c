@@ -6,7 +6,7 @@
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/11 07:30:47 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/12 07:31:36 by clcreuso         ###   ########.fr       */
+/*   Updated: 2017/09/13 10:16:20 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@ int		ft_iterative_factorial(int nb)
 	int a;
 
 	a = 1;
-	if (nb <= 0)
+	if (nb < 0)
 		return (0);
 	if (nb > 12)
 		return (0);

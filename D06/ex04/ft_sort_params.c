@@ -1,21 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_sort_params.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/13 18:34:46 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/13 18:57:24 by clcreuso         ###   ########.fr       */
+/*   Created: 2017/09/13 19:44:51 by clcreuso          #+#    #+#             */
+/*   Updated: 2017/09/14 11:05:53 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+void	ft_putchar(char c);
 
 void	ft_putstr(char *s1)
 {
@@ -43,36 +38,36 @@ int		ft_strcmp(char *s1, char *s2)
 	return (s1[a] - s2[a]);
 }
 
-void	tri_iteratif(char *tableau[], int taille)
+void	ft_sort_params(char *tab[], int len)
 {
-	char *temp; 
-	int i;
-	int j;
+	char	*swap;
+	int		a;
+	int		b;
 
-	i = 1;
-	while (i < taille) 
+	a = 1;
+	while (a < len)
 	{
-		j = 1;
-		while (j < taille)
+		b = 1;
+		while (b < len)
 		{
-			if (ft_strcmp(tableau[i], tableau[j]) < 0)
+			if (ft_strcmp(tab[a], tab[b]) < 0)
 			{
-				temp = tableau[i];
-				tableau[i] = tableau[j];
-				tableau[j] = temp;
+				swap = tab[a];
+				tab[a] = tab[b];
+				tab[b] = swap;
 			}
-			j++;
+			b++;
 		}
-		i++;
+		a++;
 	}
 }
 
-int  main(int argc, char *argv[])
+int		main(int argc, char *argv[])
 {
 	int i;
 
-	tri_iteratif(argv, argc);
 	i = 1;
+	ft_sort_params(argv, argc);
 	while (i < argc)
 	{
 		ft_putstr(argv[i]);

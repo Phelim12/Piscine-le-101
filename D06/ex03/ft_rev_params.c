@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrev.c                                        :+:      :+:    :+:   */
+/*   ft_rev_params.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/08 20:59:39 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/13 16:09:41 by clcreuso         ###   ########.fr       */
+/*   Created: 2017/09/14 10:54:35 by clcreuso          #+#    #+#             */
+/*   Updated: 2017/09/14 10:56:47 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+void	ft_putchar(char c);
 
 int		ft_strlen(char *str)
 {
@@ -40,11 +40,6 @@ char	*ft_strrev(char *str)
 	return (str);
 }
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
-
 void	ft_putstr(char *str)
 {
 	int i;
@@ -71,4 +66,3 @@ int		main(int argc, char *argv[])
 	}
 	return (0);
 }
-
