@@ -6,11 +6,13 @@
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/17 10:32:27 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/17 11:07:37 by clcreuso         ###   ########.fr       */
+/*   Updated: 2017/09/17 16:01:29 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sudoku.h"
+
+
 
 void	ft_print_sudoku(char **sudoku)
 {
