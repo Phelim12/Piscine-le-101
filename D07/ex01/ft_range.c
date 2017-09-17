@@ -1,39 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/15 17:39:46 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/16 13:38:12 by clcreuso         ###   ########.fr       */
+/*   Created: 2017/09/14 13:18:22 by clcreuso          #+#    #+#             */
+/*   Updated: 2017/09/15 11:12:24 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char *str)
+int	*ft_range(int min, int max)
 {
-	int i;
+	int *tab;
+	int a;
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
-{
-	unsigned int i;
-	unsigned int len_dest;
-	unsigned int max_size;
-
-	i = 0;
-	len_dest = ft_strlen(dest);
-	max_size = ((size + 1) + len_dest);
-	while (src[i] && i < max_size)
+	a = 0;
+	if (min > max)
+		return (NULL);
+	tab = malloc(sizeof(int) * (max - min) + 1);
+	while ((min + a) < max)
 	{
-		dest[len_dest + i] = src[i];
-		i++;
+		tab[a] = min + a;
+		a++;
 	}
-	dest[len_dest + i] = '\0';
-	return (len_dest + i);
+	return (tab);
 }

@@ -6,7 +6,7 @@
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/12 18:37:48 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/13 18:26:51 by clcreuso         ###   ########.fr       */
+/*   Updated: 2017/09/16 13:37:04 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strncat(char *dest, char *src, int nb)
 	}
 	while (b < nb)
 	{
-		dest[a] = '\0';
+		dest[b + a] = '\0';
 		b++;
 	}
 	return (dest);

@@ -1,39 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   fttttt_rot42.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/15 17:39:46 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/16 13:38:12 by clcreuso         ###   ########.fr       */
+/*   Created: 2017/09/15 21:20:49 by clcreuso          #+#    #+#             */
+/*   Updated: 2017/09/16 10:53:11 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char *str)
+int		vj_sxqh_yi_qbfxq(char s)
 {
-	int i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+	if ((s >= 'A' && s <= 'Z') || (s >= 'a' && s <= 'z'))
+		return (1);
+	return (0);
 }
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+char	vj_hej(char s)
 {
-	unsigned int i;
-	unsigned int len_dest;
-	unsigned int max_size;
+	if (!(vj_sxqh_yi_qbfxq(s)))
+		return (s);
+	if ((s > 'J' && s <= 'Z') || (s > 'j' && s <= 'z'))
+		s -= 26;
+	s += 16;
+	return (s);
+}
 
-	i = 0;
-	len_dest = ft_strlen(dest);
-	max_size = ((size + 1) + len_dest);
-	while (src[i] && i < max_size)
+char	*ft_rot42(char *ijh)
+{
+	int q;
+
+	q = 0;
+	while (ijh[q])
 	{
-		dest[len_dest + i] = src[i];
-		i++;
+		ijh[q] = vj_hej(ijh[q]);
+		q++;
 	}
-	dest[len_dest + i] = '\0';
-	return (len_dest + i);
+	return (ijh);
 }

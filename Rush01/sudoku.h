@@ -1,32 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   sudoku.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/12 20:50:43 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/14 18:07:35 by clcreuso         ###   ########.fr       */
+/*   Created: 2017/09/17 10:55:55 by clcreuso          #+#    #+#             */
+/*   Updated: 2017/09/17 11:00:19 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef		SUDOKU_H
+#define		SUDOKU_H
+
+void	ft_print_sudoku(char **sudoku);
+void	ft_make_sudoku(char **sudoku);
 void	ft_putchar(char c);
 
-void	ft_putstr(char *str)
-{
-	int i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		ft_putchar(str[i]);
-		i++;
-	}
-}
-
-int		main(int argc, char *argv[])
-{
-	ft_putstr(argv[argc - argc]);
-	ft_putchar('\n');
-	return (0);
-}
+#endif

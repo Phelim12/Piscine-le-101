@@ -1,39 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/15 17:39:46 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/16 13:38:12 by clcreuso         ###   ########.fr       */
+/*   Created: 2017/09/15 11:27:37 by clcreuso          #+#    #+#             */
+/*   Updated: 2017/09/15 11:33:23 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char *str)
+int		ft_strlen(char *s1)
 {
-	int i;
+	int a;
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+	a = 0;
+	while (s1[a])
+		a++;
+	return (a);
 }
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+char	*ft_strcpy(char *dest, char *src)
 {
-	unsigned int i;
-	unsigned int len_dest;
-	unsigned int max_size;
+	int a;
 
-	i = 0;
-	len_dest = ft_strlen(dest);
-	max_size = ((size + 1) + len_dest);
-	while (src[i] && i < max_size)
+	a = 0;
+	while (src[a])
 	{
-		dest[len_dest + i] = src[i];
-		i++;
+		dest[a] = src[a];
+		a++;
 	}
-	dest[len_dest + i] = '\0';
-	return (len_dest + i);
+	dest[a] = '\0';
+	return (src);
+}
+
+char	*ft_strdup(char *src)
+{
+	char *dest;
+
+	dest = malloc(sizeof(char) * (ft_strlen(src) + 1));
+	dest = ft_strcpy(dest, src);
+	return (dest);
 }

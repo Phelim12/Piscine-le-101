@@ -6,7 +6,7 @@
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/14 10:54:35 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/14 10:56:47 by clcreuso         ###   ########.fr       */
+/*   Updated: 2017/09/14 18:14:32 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int		main(int argc, char *argv[])
 	int a;
 
 	a = 1;
-	while (argv[a])
+	while (a < argc)
 	{
 		ft_strrev(argv[a]);
 		ft_putstr(argv[a]);
