@@ -6,7 +6,7 @@
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/17 10:32:27 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/18 09:16:22 by clcreuso         ###   ########.fr       */
+/*   Updated: 2017/09/18 15:34:37 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,26 @@ void	ft_print_sudoku(char **sudoku)
 		}
 		ft_putchar('\n');
 		y++;
+	}
+}
+
+void	ft_print_rev_sudoku(char **sudoku)
+{
+	int y;
+	int x;
+
+	y = 8;
+	while (y >= 0)
+	{
+		x = 8;
+		while (x >= 0)
+		{
+			ft_putchar(sudoku[y][x]);
+			if (x > 0)
+				ft_putchar(' ');
+			x--;
+		}
+		ft_putchar('\n');
+		y--;
 	}
 }
