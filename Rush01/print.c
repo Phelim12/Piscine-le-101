@@ -6,21 +6,28 @@
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/17 10:32:27 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/17 16:22:15 by clcreuso         ###   ########.fr       */
+/*   Updated: 2017/09/18 09:16:22 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sudoku.h"
 #include <unistd.h>
 
-int		ft_chk_args(char **argv)
+void	ft_putchar(char c)
 {
-	
+	write(1, &c, 1);
 }
 
-void	ft_print_error(void)
+void	ft_putstr(char *str)
 {
-	write(1, "Error\n", 6);
+	int a;
+
+	a = 0;
+	while (str[a])
+	{
+		ft_putchar(str[a]);
+		a++;
+	}
 }
 
 void	ft_print_sudoku(char **sudoku)

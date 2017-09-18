@@ -1,22 +1,46 @@
-/* ************************************************************************** */
-/*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   tools.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/17 10:35:40 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/17 16:16:23 by clcreuso         ###   ########.fr       */
+/*   Updated: 2017/09/18 07:37:04 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sudoku.h"
-#include <unistd.h>
 #include <stdlib.h>
 
-void	ft_putchar(char c)
+int		ft_strlen(char *str)
 {
-	write(1, &c, 1);
+	int a;
+
+	a = 0;
+	while (str[a])
+		a++;
+	return (a);
+}
+
+int		ft_chk_args(char **argv)
+{
+	int y;
+	int x;
+
+	y = 0;		
+	while (y <= 8)
+	{
+		if ((ft_strlen(argv[y])) != 9)
+			return (1);
+		x = 0;
+		while (x <= 8)
+		{
+			if (!(argv[y][x] == '0' || (argv[y][x] <= '9' && argv[y][x] >= '1')))
+				return (1);
+			x++;
+		}
+		y++;
+	}
+	return (0);
 }
 
 char **ft_make_sudoku(char **sudoku1, char **sudoku2, int y, int x)
