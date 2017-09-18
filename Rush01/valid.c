@@ -6,7 +6,7 @@
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/17 10:32:08 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/18 16:15:47 by clcreuso         ###   ########.fr       */
+/*   Updated: 2017/09/18 20:53:53 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int		ft_chk_col2(char **sudoku, char nb, int x)
 	cp_y = 0;
 	while (cp_y < 9)
 	{
-		if (nb == sudoku[cp_y][x] )
+		if (nb == sudoku[cp_y][x])
 			chk++;
 		cp_y++;
 	}
@@ -74,13 +74,12 @@ int		ft_chk_col2(char **sudoku, char nb, int x)
 	return (0);
 }
 
-
-int		ft_check_valid(char **sudoku, char **tab, int p)
+int		ft_check_valid1(char **sudoku, char **tab, int p)
 {
-	char nb;
-	int val;
-	int y;
-	int x;
+	char	nb;
+	int		val;
+	int		y;
+	int		x;
 
 	val = 0;
 	nb = 0;
@@ -89,13 +88,41 @@ int		ft_check_valid(char **sudoku, char **tab, int p)
 	if (y == 9)
 		return (0);
 	if (tab[y][x] == 0)
-		return (ft_check_valid(sudoku, tab, p + 1));
+		return (ft_check_valid1(sudoku, tab, p + 1));
 	nb = sudoku[y][x];
 	val += ft_chk_line2(sudoku, nb, y);
 	val += ft_chk_col2(sudoku, nb, x);
 	val += ft_chk_square2(sudoku, nb, y, x);
 	if (val == 3)
-		return (ft_check_valid(sudoku, tab, p + 1));
+		return (ft_check_valid1(sudoku, tab, p + 1));
 	else
 		return (1);
+}
+
+int		ft_resolve_sudoku2(char **sudoku, char **tab, int p)
+{
+	char	nb;
+	int		y;
+	int		x;
+
+	y = p / 9;
+	x = p % 9;
+	nb = '1';
+	if (p == -1)
+		return (1);
+	if (tab[y][x] == 1)
+		return (ft_resolve_sudoku2(sudoku, tab, p - 1));
+	while (nb <= '9')
+	{
+		if (ft_chk_line(sudoku, nb, y) && ft_chk_col(sudoku, nb, x) &&
+				ft_chk_square(sudoku, nb, y, x))
+		{
+			sudoku[y][x] = nb;
+			if (ft_resolve_sudoku2(sudoku, tab, p - 1))
+				return (1);
+		}
+		nb++;
+	}
+	sudoku[y][x] = '0';
+	return (0);
 }

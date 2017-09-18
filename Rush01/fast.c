@@ -6,7 +6,7 @@
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/18 14:36:07 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/18 16:24:56 by clcreuso         ###   ########.fr       */
+/*   Updated: 2017/09/18 20:46:16 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int		ft_first_line(char *str)
 		if (str[a] == '.')
 			b++;
 		a++;
-	} 
+	}
 	if (b == 9)
 		return (1);
 	return (0);
@@ -32,9 +32,9 @@ int		ft_first_line(char *str)
 
 void	ft_rev_sudoku(char **sudoku)
 {
-	char swap;
-	int a;
-	int b;
+	char	swap;
+	int		a;
+	int		b;
 
 	a = 0;
 	b = 80;

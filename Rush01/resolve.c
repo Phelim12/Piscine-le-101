@@ -6,7 +6,7 @@
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/17 10:32:08 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/18 16:17:30 by clcreuso         ###   ########.fr       */
+/*   Updated: 2017/09/18 20:50:24 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int		ft_chk_square(char **sudoku, char nb, int y, int x)
 {
 	int cp_y;
 	int cp_x;
-	
+
 	cp_y = y - (y % 3);
 	cp_x = x - (x % 3);
 	y = cp_y;
@@ -64,9 +64,9 @@ int		ft_chk_square(char **sudoku, char nb, int y, int x)
 
 int		ft_resolve_sudoku(char **sudoku, char **tab, int p)
 {
-	char nb;
-	int y;
-	int x;
+	char	nb;
+	int		y;
+	int		x;
 
 	y = p / 9;
 	x = p % 9;
@@ -77,8 +77,7 @@ int		ft_resolve_sudoku(char **sudoku, char **tab, int p)
 		return (ft_resolve_sudoku(sudoku, tab, p + 1));
 	while (nb <= '9')
 	{
-		if (ft_chk_line(sudoku, nb, y) &&
-				ft_chk_col(sudoku, nb, x) &&
+		if (ft_chk_line(sudoku, nb, y) && ft_chk_col(sudoku, nb, x) &&
 				ft_chk_square(sudoku, nb, y, x))
 		{
 			sudoku[y][x] = nb;
@@ -89,4 +88,20 @@ int		ft_resolve_sudoku(char **sudoku, char **tab, int p)
 	}
 	sudoku[y][x] = '0';
 	return (0);
+}
+
+int		ft_check_print(char **sudoku, int y, int x)
+{
+	while (y < 9)
+	{
+		x = 0;
+		while (x < 9)
+		{
+			if (!(sudoku[y][x] <= '9' && sudoku[y][x] >= '1'))
+				return (0);
+			x++;
+		}
+		y++;
+	}
+	return (1);
 }
