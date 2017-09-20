@@ -6,7 +6,7 @@
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/14 10:54:35 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/14 18:14:32 by clcreuso         ###   ########.fr       */
+/*   Updated: 2017/09/15 10:28:21 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,24 +20,6 @@ int		ft_strlen(char *str)
 	while (str[i] != '\0')
 		i++;
 	return (i);
-}
-
-char	*ft_strrev(char *str)
-{
-	char	swap;
-	int		size;
-	int		a;
-
-	a = 0;
-	size = ft_strlen(str);
-	while (a < size / 2)
-	{
-		swap = str[size - (a + 1)];
-		str[size - (a + 1)] = str[a];
-		str[a] = swap;
-		a++;
-	}
-	return (str);
 }
 
 void	ft_putstr(char *str)
@@ -57,12 +39,12 @@ int		main(int argc, char *argv[])
 	int a;
 
 	a = 1;
-	while (a < argc)
+	argc--;
+	while (argc >= a)
 	{
-		ft_strrev(argv[a]);
-		ft_putstr(argv[a]);
+		ft_putstr(argv[argc]);
 		ft_putchar('\n');
-		a++;
+		argc--;
 	}
 	return (0);
 }

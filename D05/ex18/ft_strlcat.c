@@ -5,35 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/15 17:39:46 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/16 13:38:12 by clcreuso         ###   ########.fr       */
+/*   Created: 2017/09/12 18:37:48 by clcreuso          #+#    #+#             */
+/*   Updated: 2017/09/13 12:51:58 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char *str)
+char	*ft_strlcat(char *dest, char *src, unsigned int nb)
 {
-	int i;
+	unsigned int	b;
+	int				a;
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
-{
-	unsigned int i;
-	unsigned int len_dest;
-	unsigned int max_size;
-
-	i = 0;
-	len_dest = ft_strlen(dest);
-	max_size = ((size + 1) + len_dest);
-	while (src[i] && i < max_size)
+	a = 0;
+	b = 0;
+	while (dest[a])
+		a++;
+	while (src[b] && b < nb)
 	{
-		dest[len_dest + i] = src[i];
-		i++;
+		dest[b + a] = src[b];
+		b++;
 	}
-	dest[len_dest + i] = '\0';
-	return (len_dest + i);
+	while (b < nb)
+	{
+		dest[a + b] = '\0';
+		b++;
+	}
+	return (dest);
 }

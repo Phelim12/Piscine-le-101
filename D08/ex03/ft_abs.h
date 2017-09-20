@@ -1,35 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_words_tables.c                            :+:      :+:    :+:   */
+/*   abs.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/15 10:51:56 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/19 18:38:37 by clcreuso         ###   ########.fr       */
+/*   Created: 2017/09/19 19:21:22 by clcreuso          #+#    #+#             */
+/*   Updated: 2017/09/20 18:51:48 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#ifndef FT_ABS_H
+# define FT_ABS_H
 
-void	ft_putchar(char c);
-char	**ft_split_whitespaces(char *str);
+# define ABS(v)		(v < 0 ? -v : v)
 
-void	ft_print_words_tables(char **tab)
-{
-	int a;
-	int b;
-
-	a = 0;
-	while (tab[a])
-	{
-		b = 0;
-		while (tab[a][b])
-		{
-			ft_putchar(tab[a][b]);
-			b++;
-		}
-		ft_putchar('\n');
-		a++;
-	}
-}
+#endif

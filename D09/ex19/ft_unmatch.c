@@ -6,7 +6,7 @@
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/16 16:28:42 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/16 16:35:45 by clcreuso         ###   ########.fr       */
+/*   Updated: 2017/09/16 16:41:13 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_unmatch(int *tab, int length)
 
 	c = 0;
 	b = 0;
-	a = 1;
+	a = 0;
 	while (a < length)
 	{
 		while (b < length)

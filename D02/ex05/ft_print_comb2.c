@@ -6,16 +6,11 @@
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/08 12:33:30 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/13 11:06:10 by clcreuso         ###   ########.fr       */
+/*   Updated: 2017/09/10 09:04:58 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+void	ft_putchar(char c);
 
 void	ft_init_tab(int a, int *str)
 {
@@ -84,9 +79,4 @@ void	ft_print_comb2(void)
 		else
 			tab[3] = tab[1] + 1;
 	}
-}
-
-int main()
-{
-	ft_print_comb2();	
 }

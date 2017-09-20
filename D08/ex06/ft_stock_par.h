@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_words_tables.c                            :+:      :+:    :+:   */
+/*   ft_stock_par.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/15 10:51:56 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/19 18:38:37 by clcreuso         ###   ########.fr       */
+/*   Created: 2017/09/20 13:57:56 by clcreuso          #+#    #+#             */
+/*   Updated: 2017/09/20 18:53:04 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#ifndef FT_STOCK_PAR_H
+# define FT_STOCK_PAR_H
 
-void	ft_putchar(char c);
-char	**ft_split_whitespaces(char *str);
+void				ft_putchar(char c);
 
-void	ft_print_words_tables(char **tab)
+typedef struct		s_stock_par
 {
-	int a;
-	int b;
+	int		size_param;
+	char	*str;
+	char	*copy;
+	char	**tab;
+}					t_stock_par;
 
-	a = 0;
-	while (tab[a])
-	{
-		b = 0;
-		while (tab[a][b])
-		{
-			ft_putchar(tab[a][b]);
-			b++;
-		}
-		ft_putchar('\n');
-		a++;
-	}
-}
+#endif

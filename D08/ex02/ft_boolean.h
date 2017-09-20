@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_words_tables.c                            :+:      :+:    :+:   */
+/*   ft_boolean.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: clcreuso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/15 10:51:56 by clcreuso          #+#    #+#             */
-/*   Updated: 2017/09/19 18:38:37 by clcreuso         ###   ########.fr       */
+/*   Created: 2017/09/15 08:28:49 by clcreuso          #+#    #+#             */
+/*   Updated: 2017/09/20 18:52:28 by clcreuso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#ifndef FT_BOOLEAN_H
+# define FT_BOOLEAN_H
 
-void	ft_putchar(char c);
-char	**ft_split_whitespaces(char *str);
+# include <unistd.h>
 
-void	ft_print_words_tables(char **tab)
-{
-	int a;
-	int b;
+# define EVEN(x)	(!((x) % 2))
+# define ODD_MSG	"I have an odd number of arguments.\n"
+# define EVEN_MSG	"I have an even number of arguments.\n"
+# define SUCCESS	0
+# define TRUE		1
+# define FALSE		0
 
-	a = 0;
-	while (tab[a])
-	{
-		b = 0;
-		while (tab[a][b])
-		{
-			ft_putchar(tab[a][b]);
-			b++;
-		}
-		ft_putchar('\n');
-		a++;
-	}
-}
+typedef	int			t_bool;
+
+#endif
